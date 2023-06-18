@@ -26,14 +26,15 @@ box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.
 `;
 export const Circle = styled.div`
 position: absolute;
-top: -500%;
-left: 150px;
-width: 64px;
-height: 64px;
-border: 8px solid #EBD8FF;
-border-radius: 50%;
-background: rgba(87, 54, 163, 1);
-overflow: hidden;
+  top: -500%;
+  left: 150px;
+  width: 64px;
+  height: 64px;
+  border: 8px solid #EBD8FF;
+  border-radius: 50%;
+  background: rgba(87, 54, 163, 1);
+  overflow: hidden;
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF;
 `;
 
 export const CardContentBottom = styled.div`
@@ -57,6 +58,7 @@ flex-direction: column;
 export const Button = styled.button`
 width: 196px;
 height: 50px;
+border: none;
 box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
 border-radius: 10.3108px;
 font-family: 'Montserrat';

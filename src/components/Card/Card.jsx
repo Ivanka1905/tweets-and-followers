@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
 import {
   CardItem,
   CardContentBottom,
@@ -10,13 +9,8 @@ import {
   Circle,
 } from './Card.styled';
 import { ReactComponent as Logo } from '../../images/Logo.svg';
-import {
-  addSubscription,
-  getSubscriptions,
-} from 'components/services/usersApi';
 
-const Card = ({ user, avatar, tweets, followers, id }) => {
-    const [myChoice, setMyChoice] = useState([])
+const Card = ({ user, avatar, tweets, followers, id, onClick, myChoice }) => {
   const followersToString = String(followers);
   const concatString = `${followersToString.slice(
     0,
@@ -25,22 +19,10 @@ const Card = ({ user, avatar, tweets, followers, id }) => {
     followersToString.length - 3,
     followersToString.length
   )}`;
-  //   console.log(concatString)
 
-//   useEffect(() => {
-//     getSubscriptions();
-//   }, [myChoice]);
+  const isFollowing = myChoice.find(u => u.userCardId === id);
+  const isFollowingStyle = isFollowing ? { backgroundColor: '#5CD3A8' } : {};
 
-  const handleClick = e => {
-    const userCardId = e.currentTarget.dataset.id;
-    const name = e.currentTarget.value;
-    console.log({ userCardId, name });
-      addSubscription({ userCardId, name });
-      setMyChoice({ userCardId, name })
-    //    getSubscriptions()
-  };
-
-  //   console.log(id);
   return (
     <CardItem>
       <CardContentTop>
@@ -56,8 +38,14 @@ const Card = ({ user, avatar, tweets, followers, id }) => {
           <li>{tweets} tweets</li>
           <li>{concatString} Followers</li>
         </List>
-        <Button type="button" onClick={handleClick} data-id={id} value={user}>
-          Follow
+        <Button
+          type="button"
+          onClick={onClick}
+          data-id={id}
+          value={user}
+          style={isFollowingStyle}
+        >
+          {isFollowing ? 'Following' : 'Follow'}
         </Button>
       </CardContentBottom>
     </CardItem>

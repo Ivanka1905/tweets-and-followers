@@ -4,9 +4,14 @@ import axios from 'axios';
 const BASE_URL = 'https://648cedf38620b8bae7ed7e1b.mockapi.io/';
 axios.defaults.baseURL = BASE_URL;
 
-export async function getAll() {
+export async function getAll(page) {
   try {
-    const response = await axios.get('/users');
+    const response = await axios.get('/users',  {
+          params: {
+            'page': page,
+            'limit': 3
+          }
+        });
     // console.log(response.data)
     return response.data;
   } catch (error) {
@@ -17,45 +22,55 @@ export async function getAll() {
 export async function getOne(id) {
   try {
     const response = await axios.get(`/users/${id}`);
-    console.log(response.data)
+    // console.log(response.data)
     return response.data;
   
   } catch (error) {
     console.log(error.message);
+  }
+}
+
+export async function updFollowers(id, newFollowersCount) {
+  try {
+    const response = await axios.put(`/users/${id}`, newFollowersCount );
+  // console.log('Дані про followers оновлено:', response.data);
+    return response.data;
+  
+  } catch (error) {
+    console.error('Помилка оновлення даних про followers:', error);
   }
 }
 
 export async function getSubscriptions() {
   try {
     const response = await axios.get('/subscriptions');
-    console.log(response.data)
+    // console.log("getAll", response.data)
     return response.data;
   } catch (error) {
     console.log(error.message);
   }
 }
 
-export async function addSubscription(mySub) {
+export async function addSubscription(subscription) {
   try {
-    const response = await axios.post('/subscriptions', mySub);
-    console.log(response.data)
+    const response = await axios.post('/subscriptions', subscription);
     return response.data;
-  
   } catch (error) {
     console.log(error.message);
+    throw error;
   }
 }
 
-export async function deleteSubscription(id) {
+export async function deleteSubscription(subscriptionId) {
   try {
-    const response = await axios.delete(`/subscriptions/${id}`);
-    console.log(response.data)
+    const response = await axios.delete(`/subscriptions/${subscriptionId}`);
     return response.data;
-  
   } catch (error) {
     console.log(error.message);
+    throw error;
   }
 }
+
 
 // export async function addOrder(newOrder) {
 //   try {
