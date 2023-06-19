@@ -8,18 +8,12 @@ import {
 } from 'components/services/usersApi';
 import React, { useEffect, useState } from 'react';
 import { Container, Box, Button } from './Cards.styled';
-// import Dropdown from 'react-dropdown';
-// import 'react-dropdown/style.css';
-
-// const options = ['show all', 'follow', 'followings'];
-// const defaultOption = options[0];
 
 const Cards = () => {
   const [users, setUsers] = useState([]);
   const [myChoice, setMyChoice] = useState([]);
   const [userId, setUserId] = useState(null);
   const [page, setPage] = useState(1);
-//   const [selectedOption, setSelectedOption] = useState('all');
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -39,21 +33,6 @@ const Cards = () => {
     };
     fetchUsers();
   }, [page]);
-    
-// const handleDropdownChange = (event) => {
-//     setSelectedOption(event.target.value);
-//     };
-    
-//     const filteredUsers = users.filter((user) => {
-//     if (selectedOption === 'all') {
-//       return true;
-//     } else if (selectedOption === 'follow') {
-//       return !user.following;
-//     } else if (selectedOption === 'following') {
-//       return user.following;
-//     }
-//     return false;
-//   });
 
   const handleClick = async e => {
     const clickedUserId = e.currentTarget.dataset.id;
@@ -109,12 +88,7 @@ const Cards = () => {
   };
 
   return (
-      <Box>
-          {/* <Drop>
-<Dropdown value={selectedOption} onChange={handleDropdownChange}><option value="all">All</option>
-        <option value="follow">Follow</option>
-        <option value="following">Following</option></Dropdown>
-      </Drop> */}
+    <Box>
       <Container>
         {users.length > 0 &&
           users.map(({ user, avatar, tweets, followers, id }) => {
