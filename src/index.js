@@ -6,7 +6,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <BrowserRouter basename="/tweets-and-followers">
+    <BrowserRouter basename="/tweets-and-followers">
       <App />
     </BrowserRouter>
   </React.StrictMode>

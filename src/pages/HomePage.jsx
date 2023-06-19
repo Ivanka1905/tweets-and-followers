@@ -22,7 +22,8 @@ export const HomePage = () => {
       <footer>
         <Footer>
           <Span href="https://github.com/Ivanka1905">
-            <IconsGithub /> Ivanka1905</Span>
+            <IconsGithub /> Ivanka1905
+          </Span>
         </Footer>
       </footer>
       <Suspense fallback={null}>

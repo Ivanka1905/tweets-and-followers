@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import { HomePage } from 'pages/HomePage';
 import { Layout } from 'components/Layout/Layout';
 import { TweetsPage } from 'pages/TweetsPage';
-// import Cards from "./Cards/Cards";
 
 export const App = () => {
   return (

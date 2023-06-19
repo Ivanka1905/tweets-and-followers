@@ -9,7 +9,6 @@ export const Box = styled.main`
 export const MainImg = styled.div`
   padding: 20px;
   height: 450px;
-  // box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF;
   background-image: url(${require('../images/picture.png')});
   background-repeat: no-repeat;
   background-size: 462px 252px;
@@ -46,21 +45,15 @@ export const NavLinkButtonSmall = styled(NavLink)`
   position: sticky;
   top: 20px;
   padding: 15px;
-  // text-decoration: none;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-  // border-radius: 10.3108px;
   font-family: 'Montserrat';
-  // font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  // line-height: 22px;
-  // text-transform: uppercase;
   color: white;
   background: #fa7b57;
   &:hover,
   &:focus-visible {
     background: #fac957;
-    // cursor: pointer;
   }
 `;
 
@@ -71,21 +64,16 @@ export const NavLinkButton = styled(NavLink)`
   display: block;
   text-align: center;
   padding: 21px;
-  // text-decoration: none;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
   font-family: 'Montserrat';
-  // font-style: normal;
   font-weight: 600;
   font-size: 24px;
-  // line-height: 22px;
-  // text-transform: uppercase;
   color: white;
   background: #fa7b57;
   &:hover,
   &:focus-visible {
     background: #fac957;
-    // cursor: pointer;
   }
 `;
 
@@ -110,4 +98,3 @@ export const Span = styled.a`
   font-family: 'Montserrat';
   font-size: 14px;
 `;
-
